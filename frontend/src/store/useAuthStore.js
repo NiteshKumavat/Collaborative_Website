@@ -3,7 +3,7 @@ import { axiosInstance } from "../lib/axios.js";
 import toast from "react-hot-toast";
 import { io } from "socket.io-client"; // Import socket.io
 
-const BASE_URL = "http://localhost:3000"; // Make sure this matches your backend port
+const BASE_URL = import.meta.env.VITE_BASE_URL; 
 
 export const useAuthStore = create((set, get) => ({
     authUser: null,
