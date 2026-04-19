@@ -9,11 +9,7 @@ export const useMessageStore = create((set, get) => ({
     projects: [],
     loading: false,
     error: null,
-    // (Removed pagination complexity for now to ensure Socket works first)
-    
-    // ============================
-    // Helpers
-    // ============================
+
     startLoading: () => set({ loading: true, error: null }),
     stopLoading: () => set({ loading: false }),
     setError: (msg) => set({ error: msg }),
