@@ -3,6 +3,7 @@ import React from 'react';
 export default function ProfileLinks({ info, editMode, updateLink }) {
   
   // Helper to get icons (You can replace these with image tags if you prefer)
+  // eslint-disable-next-line no-unused-vars
   const getIcon = (name) => {
     switch(name) {
         case 'linkedin': return 'Likedin'; // Or use <img src="..." />

@@ -92,6 +92,7 @@ export const login = async (req, res) => {
       plan: newUser.plan,
     });
   } catch (error) {
+    console.error("Login Error:", error);
     res.status(500).json({ message: "Internal Server Error" })
   }
 }
@@ -158,6 +159,7 @@ export const register = async (req, res) => {
     }
   } catch (error) {
     console.log("Registration Error:", error);
+    alert("Error registering user:", error);
     res.status(500).json({ message: "INTERNAL SERVER ERROR" })
   }
 }
