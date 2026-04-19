@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 1. Global Reset - The "Deep Space" Base */
+@layer base {
+  body {
+    @apply bg-collab-bg text-collab-text antialiased selection:bg-collab-primary selection:text-white;
+  }
+  
+  /* Make headings crisp */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight text-white;
+  }
+}
+
+/* 2. Handcrafted Utilities - The "Glass" Effect */
+@layer components {
+  
+  /* Use this class on your Cards/Containers */
+  .glass-card {
+    @apply bg-collab-card/60 backdrop-blur-xl border border-white/10 shadow-xl;
+  }
+
+  /* Use this class on your Inputs to fix the "Disabled" look */
+  .input-field {
+    @apply bg-collab-bg/50 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-collab-primary focus:ring-1 focus:ring-collab-primary transition-all duration-200 w-full;
+  }
+
+  /* Use this for primary buttons */
+  .btn-primary-glow {
+    @apply bg-collab-primary hover:bg-indigo-500 text-white font-medium px-6 py-2.5 rounded-xl transition-all shadow-[0_0_15px_rgba(99,102,241,0.5)] hover:shadow-[0_0_25px_rgba(99,102,241,0.6)];
+  }
+}
+
+/* 3. The CSS Houdini API for your Border Animation */
+@property --border-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: "<angle>";
+}
+
+/* 4. Custom Scrollbar (Crucial for Dark Mode) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-collab-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-700 rounded-full hover:bg-slate-600;
+}
