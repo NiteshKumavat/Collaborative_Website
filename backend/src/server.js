@@ -28,7 +28,7 @@ app.use("/api/project", projectRoutes);
 app.use("/api/message", messageRoutes);
 app.use("/api/profile", profileRoutes); 
 app.use("/api/payments", paymentRoutes);
-
+connectDB();
 
 
 server.listen(PORT, () => {
